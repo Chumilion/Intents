@@ -10,9 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    int spinnerValue = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,29 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 Log.i("onClick", "Switching to SecondActivity...");
                 startActivity(intent);
+            }
+        });
+        Integer[] nums = new Integer[10];
+        for(int x = 0; x < 10; x++)
+        {
+            nums[x] = x + 1;
+        }
+        Spinner numSpinner = (Spinner) findViewById(R.id.numSpinner);
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item,  nums);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        numSpinner.setAdapter(adapter);
+        numSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                spinnerValue = (Integer) parent.getItemAtPosition(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                spinnerValue = 1;
             }
         });
     }

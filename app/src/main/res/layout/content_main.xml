@@ -17,4 +17,8 @@
         android:layout_centerInParent="true"
         android:background="#a5e"
         android:textSize="30pt"/>
+    <Spinner
+        android:id="@+id/numSpinner"
+        android:layout_width="300dp"
+        android:layout_height="100dp"></Spinner>
 </RelativeLayout>
