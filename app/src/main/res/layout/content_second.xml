@@ -10,11 +10,21 @@
     tools:showIn="@layout/activity_second" tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/maintext"
+        android:id="@+id/secondtext"
         android:text="Second Activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="#3d8"
         android:textSize="30pt"/>
+    <TextView
+        android:id="@+id/closebutton"
+        android:text="X"
+        android:gravity="center"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="#900"
+        android:textSize="20pt"/>
 </RelativeLayout>

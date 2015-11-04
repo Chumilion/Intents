@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("spinnerValue", spinnerValue);
                 Log.i("onClick", "Switching to SecondActivity...");
                 startActivity(intent);
             }
