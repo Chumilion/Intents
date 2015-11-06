@@ -34,7 +34,14 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        String maintexttext = "Main Activity";
+        Intent intent_2 = getIntent();
+        if(intent_2.hasExtra("edittext"))
+            maintexttext = intent_2.getStringExtra("edittext");
+
         TextView maintext = (TextView) findViewById(R.id.maintext);
+        maintext.setText(maintexttext);
         maintext.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)

@@ -20,11 +20,16 @@
     <TextView
         android:id="@+id/closebutton"
         android:text="X"
-        android:gravity="center"
+        android:gravity="top|center_horizontal"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:background="#900"
         android:textSize="20pt"/>
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"/>
 </RelativeLayout>
